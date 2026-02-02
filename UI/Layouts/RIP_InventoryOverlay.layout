@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Reforger Inventory Plus - Main Inventory Overlay Layout -->
+<!-- Root layout that integrates all RIP UI components into the inventory screen -->
+<FrameWidgetClass Name="RIP_InventoryOverlay" Slot="frame" Visible="true">
+	<ScriptedWidgetComponentClass Type="RIP_InventoryPlusUI" />
+
+	<FrameWidgetClass Name="RIP_OverlayContainer" Slot="frame">
+		<slot name="frame" anchor-left="0" anchor-top="0" anchor-right="1" anchor-bottom="1" />
+
+		<!-- Search Bar - positioned at the top of the inventory -->
+		<FrameWidgetClass Name="RIP_SearchBarSlot" Slot="frame">
+			<slot name="frame" anchor-left="0.1" anchor-right="0.9" offset-top="8" size-y="120" />
+
+			<include Name="RIP_SearchBarInstance" layout="UI/Layouts/RIP_SearchBar.layout" />
+		</FrameWidgetClass>
+
+		<!-- Capacity Bar - positioned below the search bar -->
+		<FrameWidgetClass Name="RIP_CapacityBarSlot" Slot="frame">
+			<slot name="frame" anchor-left="0.1" anchor-right="0.9" offset-top="132" size-y="60" />
+
+			<include Name="RIP_CapacityBarInstance" layout="UI/Layouts/RIP_CapacityBar.layout" />
+		</FrameWidgetClass>
+
+		<!-- Quick Transfer Panel - positioned on the right side between inventory and vicinity -->
+		<FrameWidgetClass Name="RIP_QuickTransferSlot" Slot="frame">
+			<slot name="frame" anchor-right="1" offset-right="-8" offset-top="200" size-x="300" size-y="250" />
+
+			<include Name="RIP_QuickTransferInstance" layout="UI/Layouts/RIP_QuickTransferPanel.layout" />
+		</FrameWidgetClass>
+
+		<!-- Enhanced Vicinity Panel - positioned on the left side -->
+		<FrameWidgetClass Name="RIP_VicinityPanelSlot" Slot="frame">
+			<slot name="frame" anchor-left="0" offset-left="8" offset-top="200" size-x="320" anchor-bottom="1" offset-bottom="-8" />
+
+			<include Name="RIP_VicinityPanelInstance" layout="UI/Layouts/RIP_VicinityPanel.layout" />
+		</FrameWidgetClass>
+	</FrameWidgetClass>
+</FrameWidgetClass>

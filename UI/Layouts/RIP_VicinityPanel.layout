@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Reforger Inventory Plus - Enhanced Vicinity Panel Layout -->
+<!-- Larger, scrollable preview of nearby items -->
+<FrameWidgetClass Name="RIP_VicinityPanel" Slot="frame" Visible="true">
+	<ScriptedWidgetComponentClass Type="RIP_VicinityPanelUI" />
+
+	<VerticalLayoutWidgetClass Name="RIP_VicinityContainer" Slot="frame">
+		<slot name="frame" anchor-left="0" anchor-top="0" anchor-right="1" anchor-bottom="1" />
+
+		<!-- Header with summary and range indicator -->
+		<HorizontalLayoutWidgetClass Slot="vertical">
+			<slot name="vertical" fill-width="1" size-y="24" />
+
+			<TextWidgetClass Name="RIP_VicinitySummary" Slot="horizontal"
+				Text="0 items nearby"
+				Font="RobotoCondensedBold"
+				FontSize="13"
+				Color="220 220 220 255"
+				HAlign="left" VAlign="center">
+				<slot name="horizontal" fill-width="1" padding-left="8" />
+			</TextWidgetClass>
+
+			<TextWidgetClass Name="RIP_RangeIndicator" Slot="horizontal"
+				Text="3m"
+				Font="RobotoCondensed"
+				FontSize="11"
+				Color="140 140 140 255"
+				HAlign="right" VAlign="center">
+				<slot name="horizontal" size-x="40" padding-right="8" />
+			</TextWidgetClass>
+		</HorizontalLayoutWidgetClass>
+
+		<!-- Sort buttons row -->
+		<HorizontalLayoutWidgetClass Slot="vertical">
+			<slot name="vertical" fill-width="1" size-y="24" padding-top="2" padding-bottom="4" />
+
+			<TextWidgetClass Slot="horizontal"
+				Text="Sort: "
+				Font="RobotoCondensed" FontSize="11" Color="140 140 140 255"
+				HAlign="left" VAlign="center">
+				<slot name="horizontal" size-x="36" padding-left="8" />
+			</TextWidgetClass>
+
+			<ButtonWidgetClass Name="RIP_BtnSortDistance" Slot="horizontal"
+				Text="Distance"
+				Font="RobotoCondensed" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="100 180 255 255">
+				<slot name="horizontal" size-x="70" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+
+			<ButtonWidgetClass Name="RIP_BtnSortCategory" Slot="horizontal"
+				Text="Category"
+				Font="RobotoCondensed" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="80 80 80 255">
+				<slot name="horizontal" size-x="70" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+
+			<ButtonWidgetClass Name="RIP_BtnSortName" Slot="horizontal"
+				Text="Name"
+				Font="RobotoCondensed" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="80 80 80 255">
+				<slot name="horizontal" size-x="50" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+		</HorizontalLayoutWidgetClass>
+
+		<!-- Scrollable item list area -->
+		<ScrollLayoutWidgetClass Name="RIP_VicinityScrollArea" Slot="vertical">
+			<slot name="vertical" fill-width="1" fill-height="1" />
+
+			<VerticalLayoutWidgetClass Name="RIP_VicinityItemList" Slot="scroll">
+				<slot name="scroll" anchor-left="0" anchor-right="1" />
+
+				<!-- Item entries are added dynamically -->
+			</VerticalLayoutWidgetClass>
+		</ScrollLayoutWidgetClass>
+	</VerticalLayoutWidgetClass>
+</FrameWidgetClass>

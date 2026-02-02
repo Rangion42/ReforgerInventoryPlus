@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Reforger Inventory Plus - Search Bar Layout -->
+<!-- Search input with category filter buttons and result summary -->
+<FrameWidgetClass Name="RIP_SearchBar" Slot="frame" Visible="true">
+	<ScriptedWidgetComponentClass Type="RIP_SearchBarUI" />
+
+	<!-- Main container - horizontal layout -->
+	<HorizontalLayoutWidgetClass Name="RIP_SearchContainer" Slot="frame">
+		<slot name="frame" anchor-left="0" anchor-top="0" anchor-right="1" size-y="40" />
+
+		<!-- Search input field -->
+		<EditBoxWidgetClass Name="RIP_SearchInput" Slot="horizontal"
+			Text=""
+			PlaceholderText="Search items..."
+			MaxLength="64"
+			Font="RobotoCondensed"
+			FontSize="16"
+			Color="255 255 255 255"
+			BackgroundColor="40 40 40 200">
+			<slot name="horizontal" fill-width="1" min-width="200" padding-left="8" padding-right="4" />
+		</EditBoxWidgetClass>
+
+		<!-- Clear search button -->
+		<ButtonWidgetClass Name="RIP_ClearButton" Slot="horizontal" Visible="false"
+			Text="X"
+			Font="RobotoCondensed"
+			FontSize="14"
+			Color="200 200 200 255"
+			BackgroundColor="80 40 40 200">
+			<slot name="horizontal" size-x="32" padding-left="2" padding-right="4" />
+		</ButtonWidgetClass>
+
+		<!-- Result count label -->
+		<TextWidgetClass Name="RIP_ResultCount" Slot="horizontal"
+			Text=""
+			Font="RobotoCondensed"
+			FontSize="12"
+			Color="180 180 180 255"
+			HAlign="center" VAlign="center">
+			<slot name="horizontal" size-x="80" padding-left="4" padding-right="4" />
+		</TextWidgetClass>
+	</HorizontalLayoutWidgetClass>
+
+	<!-- Category filter buttons row -->
+	<HorizontalLayoutWidgetClass Name="RIP_CategoryButtons" Slot="frame">
+		<slot name="frame" anchor-left="0" anchor-right="1" offset-top="44" size-y="28" />
+
+		<ButtonWidgetClass Name="RIP_BtnAll" Slot="horizontal"
+			Text="All"
+			Font="RobotoCondensed"
+			FontSize="12"
+			Color="255 255 255 255"
+			BackgroundColor="100 180 255 255">
+			<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+		</ButtonWidgetClass>
+
+		<ButtonWidgetClass Name="RIP_BtnWeapons" Slot="horizontal"
+			Text="Weapons"
+			Font="RobotoCondensed"
+			FontSize="12"
+			Color="255 255 255 255"
+			BackgroundColor="80 80 80 255">
+			<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+		</ButtonWidgetClass>
+
+		<ButtonWidgetClass Name="RIP_BtnAmmo" Slot="horizontal"
+			Text="Ammo"
+			Font="RobotoCondensed"
+			FontSize="12"
+			Color="255 255 255 255"
+			BackgroundColor="80 80 80 255">
+			<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+		</ButtonWidgetClass>
+
+		<ButtonWidgetClass Name="RIP_BtnMedical" Slot="horizontal"
+			Text="Medical"
+			Font="RobotoCondensed"
+			FontSize="12"
+			Color="255 255 255 255"
+			BackgroundColor="80 80 80 255">
+			<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+		</ButtonWidgetClass>
+
+		<ButtonWidgetClass Name="RIP_BtnEquipment" Slot="horizontal"
+			Text="Equipment"
+			Font="RobotoCondensed"
+			FontSize="12"
+			Color="255 255 255 255"
+			BackgroundColor="80 80 80 255">
+			<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+		</ButtonWidgetClass>
+	</HorizontalLayoutWidgetClass>
+
+	<!-- Aggregate summary text (below filters) -->
+	<TextWidgetClass Name="RIP_AggregateSummary" Slot="frame"
+		Visible="false"
+		Text=""
+		Font="RobotoCondensed"
+		FontSize="11"
+		Color="160 210 160 255"
+		HAlign="left" VAlign="top">
+		<slot name="frame" anchor-left="0" anchor-right="1" offset-top="76" size-y="40" padding-left="8" />
+	</TextWidgetClass>
+</FrameWidgetClass>
