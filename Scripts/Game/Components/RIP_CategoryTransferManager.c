@@ -69,7 +69,7 @@ class RIP_CategoryTransferManager
 		array<IEntity> items = {};
 		RIP_InventoryHelper.GetAllCharacterItems(m_OwnerEntity, category, items);
 
-		if (items.IsEmpty())
+		if (items.Count() == 0)
 		{
 			m_OnTransferFailed.Invoke("No items of this category found");
 			return false;
@@ -98,7 +98,7 @@ class RIP_CategoryTransferManager
 		array<IEntity> items = {};
 		RIP_InventoryHelper.GetItemsFromStorage(sourceStorage, category, items);
 
-		if (items.IsEmpty())
+		if (items.Count() == 0)
 		{
 			m_OnTransferFailed.Invoke("No items of this category in source");
 			return false;
@@ -108,7 +108,7 @@ class RIP_CategoryTransferManager
 		array<BaseInventoryStorageComponent> storages = {};
 		invManager.GetStorages(storages);
 
-		if (storages.IsEmpty())
+		if (storages.Count() == 0)
 		{
 			m_OnTransferFailed.Invoke("No character storage available");
 			return false;
@@ -136,7 +136,7 @@ class RIP_CategoryTransferManager
 		array<IEntity> items = {};
 		RIP_InventoryHelper.GetItemsFromStorage(sourceStorage, category, items);
 
-		if (items.IsEmpty())
+		if (items.Count() == 0)
 		{
 			m_OnTransferFailed.Invoke("No items of this category in source");
 			return false;

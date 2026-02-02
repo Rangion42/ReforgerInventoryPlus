@@ -292,11 +292,11 @@ class RIP_SearchManager
 
 			if (agg.m_iMaxAmmo > 0)
 			{
-				summary += string.Format("%1 x%2 (%3/%4)", name, agg.m_iCount, agg.m_iCurrentAmmo, agg.m_iMaxAmmo);
+				summary += name + " x" + agg.m_iCount.ToString() + " (" + agg.m_iCurrentAmmo.ToString() + "/" + agg.m_iMaxAmmo.ToString() + ")";
 			}
 			else
 			{
-				summary += string.Format("%1 x%2", name, agg.m_iCount);
+				summary += name + " x" + agg.m_iCount.ToString();
 			}
 		}
 		return summary;

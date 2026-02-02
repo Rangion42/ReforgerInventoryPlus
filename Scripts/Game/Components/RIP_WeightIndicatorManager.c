@@ -51,7 +51,7 @@ class RIP_StorageInfo
 
 		// Calculate ratios
 		if (m_iTotalSlots > 0)
-			m_fSlotRatio = m_iUsedSlots / m_iTotalSlots;
+			m_fSlotRatio = m_iUsedSlots / (float)m_iTotalSlots;
 		else
 			m_fSlotRatio = 0;
 
@@ -71,20 +71,18 @@ class RIP_StorageInfo
 	{
 		if (m_fMaxWeight > 0)
 		{
-			return string.Format("%1: %2/%3 %4 (%5/%6 slots)",
-				m_sStorageName,
-				RIP_WeightIndicatorManager.FormatWeight(m_fCurrentWeight),
-				RIP_WeightIndicatorManager.FormatWeight(m_fMaxWeight),
-				RIP_Constants.WEIGHT_UNIT,
-				m_iUsedSlots,
-				m_iTotalSlots);
+			return m_sStorageName + ": " +
+				RIP_WeightIndicatorManager.FormatWeight(m_fCurrentWeight) + "/" +
+				RIP_WeightIndicatorManager.FormatWeight(m_fMaxWeight) + " " +
+				RIP_Constants.WEIGHT_UNIT + " (" +
+				m_iUsedSlots.ToString() + "/" +
+				m_iTotalSlots.ToString() + " slots)";
 		}
 		else
 		{
-			return string.Format("%1: %2/%3 slots",
-				m_sStorageName,
-				m_iUsedSlots,
-				m_iTotalSlots);
+			return m_sStorageName + ": " +
+				m_iUsedSlots.ToString() + "/" +
+				m_iTotalSlots.ToString() + " slots";
 		}
 	}
 }
@@ -224,10 +222,8 @@ class RIP_WeightIndicatorManager
 	// Get overall display string
 	string GetOverallDisplayString()
 	{
-		return string.Format("Total: %1/%2 %3",
-			FormatWeight(m_fTotalWeight),
-			FormatWeight(m_fTotalMaxWeight),
-			RIP_Constants.WEIGHT_UNIT);
+		return "Total: " + FormatWeight(m_fTotalWeight) + "/" +
+			FormatWeight(m_fTotalMaxWeight) + " " + RIP_Constants.WEIGHT_UNIT;
 	}
 
 	// Format weight for display (e.g., "3.2" from 3.245)

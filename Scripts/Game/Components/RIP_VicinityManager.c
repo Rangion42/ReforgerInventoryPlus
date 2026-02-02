@@ -273,8 +273,6 @@ class RIP_VicinityManager
 	// Get summary string for vicinity
 	string GetVicinitySummary()
 	{
-		return string.Format("%1 items nearby (%2m range)",
-			m_iTotalItemCount,
-			m_fScanRange);
+		return m_iTotalItemCount.ToString() + " items nearby (" + m_fScanRange.ToString() + "m range)";
 	}
 }

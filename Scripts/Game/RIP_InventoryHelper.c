@@ -276,7 +276,7 @@ class RIP_InventoryHelper
 			string magName = currentAmmo.GetKey(i);
 			if (summary.Length() > 0)
 				summary += " | ";
-			summary += string.Format("%1: %2/%3", magName, currentAmmo.Get(magName), maxAmmo.Get(magName));
+			summary += magName + ": " + currentAmmo.Get(magName).ToString() + "/" + maxAmmo.Get(magName).ToString();
 		}
 
 		return summary;
