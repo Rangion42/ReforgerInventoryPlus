@@ -4,7 +4,7 @@
 [BaseContainerProps(configRoot: true)]
 class RIP_Config
 {
-	// Search settings
+	// Phase 1: Core Features
 	[Attribute("true", UIWidgets.CheckBox, desc: "Enable search bar in inventory")]
 	bool m_bEnableSearch;
 
@@ -16,6 +16,13 @@ class RIP_Config
 
 	[Attribute("true", UIWidgets.CheckBox, desc: "Enable enhanced vicinity view")]
 	bool m_bEnableEnhancedVicinity;
+
+	// Phase 2: Quality of Life Features
+	[Attribute("true", UIWidgets.CheckBox, desc: "Enable quick drop for rapid item disposal")]
+	bool m_bEnableQuickDrop;
+
+	[Attribute("true", UIWidgets.CheckBox, desc: "Enable magazine consolidation")]
+	bool m_bEnableMagazineConsolidation;
 
 	[Attribute("3.0", UIWidgets.Slider, desc: "Vicinity detection range (meters)", params: "1.0 10.0 0.5")]
 	float m_fVicinityRange;
@@ -44,6 +51,7 @@ class RIP_Config
 
 	void SetDefaults()
 	{
+		// Phase 1 defaults
 		m_bEnableSearch = true;
 		m_bEnableCapacityBars = true;
 		m_bEnableQuickTransfer = true;
@@ -52,5 +60,9 @@ class RIP_Config
 		m_fVicinityRefreshRate = RIP_Constants.VICINITY_REFRESH_RATE;
 		m_iSearchDebounceMs = RIP_Constants.SEARCH_DEBOUNCE_MS;
 		m_iTransferBatchSize = RIP_Constants.TRANSFER_BATCH_SIZE;
+
+		// Phase 2 defaults
+		m_bEnableQuickDrop = true;
+		m_bEnableMagazineConsolidation = true;
 	}
 }

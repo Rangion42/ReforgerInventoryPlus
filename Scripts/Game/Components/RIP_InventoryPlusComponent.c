@@ -9,11 +9,15 @@ class RIP_InventoryPlusComponentClass : ScriptComponentClass
 
 class RIP_InventoryPlusComponent : ScriptComponent
 {
-	// Sub-managers
+	// Phase 1 Sub-managers
 	protected ref RIP_SearchManager m_SearchManager;
 	protected ref RIP_CategoryTransferManager m_TransferManager;
 	protected ref RIP_WeightIndicatorManager m_WeightManager;
 	protected ref RIP_VicinityManager m_VicinityManager;
+
+	// Phase 2 Sub-managers
+	protected ref RIP_QuickDropManager m_QuickDropManager;
+	protected ref RIP_MagazineConsolidationManager m_MagazineConsolidationManager;
 
 	// State
 	protected bool m_bInitialized;
@@ -82,6 +86,7 @@ class RIP_InventoryPlusComponent : ScriptComponent
 	{
 		RIP_Config config = RIP_Config.GetInstance();
 
+		// Phase 1 managers
 		if (config.m_bEnableSearch)
 			m_SearchManager = new RIP_SearchManager(m_OwnerEntity);
 
@@ -96,15 +101,31 @@ class RIP_InventoryPlusComponent : ScriptComponent
 
 		if (config.m_bEnableEnhancedVicinity)
 			m_VicinityManager = new RIP_VicinityManager(m_OwnerEntity);
+
+		// Phase 2 managers
+		if (config.m_bEnableQuickDrop)
+			m_QuickDropManager = new RIP_QuickDropManager(m_OwnerEntity);
+
+		if (config.m_bEnableMagazineConsolidation)
+		{
+			m_MagazineConsolidationManager = new RIP_MagazineConsolidationManager(m_OwnerEntity);
+			// Perform initial scan when inventory opens
+		}
 	}
 
 	// Cleanup all sub-managers
 	protected void CleanupManagers()
 	{
+		// Phase 1 managers
 		m_SearchManager = null;
 		m_TransferManager = null;
 		m_WeightManager = null;
 		m_VicinityManager = null;
+
+		// Phase 2 managers
+		m_QuickDropManager = null;
+		m_MagazineConsolidationManager = null;
+
 		m_bInitialized = false;
 	}
 
@@ -123,7 +144,7 @@ class RIP_InventoryPlusComponent : ScriptComponent
 	{
 		m_bInventoryOpen = true;
 
-		// Refresh data when inventory opens
+		// Refresh Phase 1 data when inventory opens
 		if (m_WeightManager)
 		{
 			m_WeightManager.RefreshStorages();
@@ -135,6 +156,10 @@ class RIP_InventoryPlusComponent : ScriptComponent
 
 		if (m_SearchManager)
 			m_SearchManager.ForceRefresh();
+
+		// Refresh Phase 2 data
+		if (m_MagazineConsolidationManager)
+			m_MagazineConsolidationManager.ScanMagazines();
 	}
 
 	// Called when inventory UI closes
@@ -142,13 +167,17 @@ class RIP_InventoryPlusComponent : ScriptComponent
 	{
 		m_bInventoryOpen = false;
 
-		// Clear search when closing
+		// Clear Phase 1 state when closing
 		if (m_SearchManager)
 			m_SearchManager.ClearSearch();
 
 		// Cancel any pending transfers
 		if (m_TransferManager && m_TransferManager.IsTransferInProgress())
 			m_TransferManager.CancelTransfer();
+
+		// Clear Phase 2 state
+		if (m_QuickDropManager)
+			m_QuickDropManager.ClearMarkedItems();
 	}
 
 	// Public API for UI scripts
@@ -237,5 +266,79 @@ class RIP_InventoryPlusComponent : ScriptComponent
 	bool IsInitialized()
 	{
 		return m_bInitialized;
+	}
+
+	// Phase 2: Quick Drop API
+	RIP_QuickDropManager GetQuickDropManager()
+	{
+		return m_QuickDropManager;
+	}
+
+	bool MarkItemForDrop(IEntity item)
+	{
+		if (m_QuickDropManager)
+			return m_QuickDropManager.MarkItemForDrop(item);
+		return false;
+	}
+
+	bool UnmarkItem(IEntity item)
+	{
+		if (m_QuickDropManager)
+			return m_QuickDropManager.UnmarkItem(item);
+		return false;
+	}
+
+	bool ToggleItemMark(IEntity item)
+	{
+		if (m_QuickDropManager)
+			return m_QuickDropManager.ToggleItemMark(item);
+		return false;
+	}
+
+	bool DropMarkedItems()
+	{
+		if (m_QuickDropManager)
+			return m_QuickDropManager.DropMarkedItems();
+		return false;
+	}
+
+	int GetMarkedItemCount()
+	{
+		if (m_QuickDropManager)
+			return m_QuickDropManager.GetMarkedItemCount();
+		return 0;
+	}
+
+	// Phase 2: Magazine Consolidation API
+	RIP_MagazineConsolidationManager GetMagazineConsolidationManager()
+	{
+		return m_MagazineConsolidationManager;
+	}
+
+	bool ConsolidateMagazineType(string magazineTypeName)
+	{
+		if (m_MagazineConsolidationManager)
+			return m_MagazineConsolidationManager.ConsolidateMagazineType(magazineTypeName);
+		return false;
+	}
+
+	bool ConsolidateAllMagazines()
+	{
+		if (m_MagazineConsolidationManager)
+			return m_MagazineConsolidationManager.ConsolidateAllMagazines();
+		return false;
+	}
+
+	void ScanMagazines()
+	{
+		if (m_MagazineConsolidationManager)
+			m_MagazineConsolidationManager.ScanMagazines();
+	}
+
+	int GetMagazineConsolidationSavings()
+	{
+		if (m_MagazineConsolidationManager)
+			return m_MagazineConsolidationManager.GetTotalPotentialSavings();
+		return 0;
 	}
 }
