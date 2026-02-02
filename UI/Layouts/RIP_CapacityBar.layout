@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Reforger Inventory Plus - Capacity Bar Layout -->
+<!-- Color-coded weight/capacity indicator bars -->
+<FrameWidgetClass Name="RIP_CapacityBar" Slot="frame" Visible="true">
+	<ScriptedWidgetComponentClass Type="RIP_CapacityBarUI" />
+
+	<!-- Overall capacity section -->
+	<VerticalLayoutWidgetClass Name="RIP_CapacityContainer" Slot="frame">
+		<slot name="frame" anchor-left="0" anchor-top="0" anchor-right="1" size-y="48" />
+
+		<!-- Overall weight text -->
+		<TextWidgetClass Name="RIP_OverallWeightText" Slot="vertical"
+			Text="Total: 0/0 kg"
+			Font="RobotoCondensed"
+			FontSize="12"
+			Color="200 200 200 255"
+			HAlign="left" VAlign="center">
+			<slot name="vertical" fill-width="1" size-y="16" padding-left="4" padding-bottom="2" />
+		</TextWidgetClass>
+
+		<!-- Overall capacity bar -->
+		<FrameWidgetClass Name="RIP_OverallBarContainer" Slot="vertical">
+			<slot name="vertical" fill-width="1" size-y="10" padding-left="4" padding-right="4" />
+
+			<!-- Bar background -->
+			<ImageWidgetClass Name="RIP_OverallBarBg" Slot="frame"
+				Color="48 48 48 128">
+				<slot name="frame" anchor-left="0" anchor-top="0" anchor-right="1" anchor-bottom="1" />
+			</ImageWidgetClass>
+
+			<!-- Bar fill (width is set dynamically based on ratio) -->
+			<ImageWidgetClass Name="RIP_OverallBarFill" Slot="frame"
+				Color="76 175 80 255">
+				<slot name="frame" anchor-left="0" anchor-top="0" anchor-bottom="1" size-x="0" />
+			</ImageWidgetClass>
+		</FrameWidgetClass>
+
+		<!-- Per-storage bars container -->
+		<VerticalLayoutWidgetClass Name="RIP_StorageBarsContainer" Slot="vertical">
+			<slot name="vertical" fill-width="1" padding-top="4" />
+		</VerticalLayoutWidgetClass>
+	</VerticalLayoutWidgetClass>
+</FrameWidgetClass>

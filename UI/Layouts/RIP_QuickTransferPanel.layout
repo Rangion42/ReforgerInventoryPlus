@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Reforger Inventory Plus - Quick Transfer Panel Layout -->
+<!-- Category-based transfer buttons for one-click item movement -->
+<FrameWidgetClass Name="RIP_QuickTransferPanel" Slot="frame" Visible="true">
+	<ScriptedWidgetComponentClass Type="RIP_QuickTransferUI" />
+
+	<VerticalLayoutWidgetClass Name="RIP_TransferContainer" Slot="frame">
+		<slot name="frame" anchor-left="0" anchor-top="0" anchor-right="1" />
+
+		<!-- Header -->
+		<TextWidgetClass Slot="vertical"
+			Text="Quick Transfer"
+			Font="RobotoCondensedBold"
+			FontSize="13"
+			Color="220 220 220 255"
+			HAlign="center">
+			<slot name="vertical" fill-width="1" size-y="20" padding-bottom="4" />
+		</TextWidgetClass>
+
+		<!-- Transfer buttons grid - Pick Up row (vicinity -> inventory) -->
+		<TextWidgetClass Slot="vertical"
+			Text="Pick Up"
+			Font="RobotoCondensed"
+			FontSize="11"
+			Color="160 160 160 255"
+			HAlign="left">
+			<slot name="vertical" fill-width="1" size-y="16" padding-left="4" />
+		</TextWidgetClass>
+
+		<HorizontalLayoutWidgetClass Name="RIP_PickUpRow" Slot="vertical">
+			<slot name="vertical" fill-width="1" size-y="32" padding-bottom="2" />
+
+			<ButtonWidgetClass Name="RIP_BtnPickUpWeapons" Slot="horizontal"
+				Text="Weapons"
+				Font="RobotoCondensed" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="120 60 60 220">
+				<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+
+			<ButtonWidgetClass Name="RIP_BtnPickUpAmmo" Slot="horizontal"
+				Text="Ammo"
+				Font="RobotoCondensed" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="120 100 40 220">
+				<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+
+			<ButtonWidgetClass Name="RIP_BtnPickUpMedical" Slot="horizontal"
+				Text="Medical"
+				Font="RobotoCondensed" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="40 120 60 220">
+				<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+
+			<ButtonWidgetClass Name="RIP_BtnPickUpEquipment" Slot="horizontal"
+				Text="Equipment"
+				Font="RobotoCondensed" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="60 80 120 220">
+				<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+
+			<ButtonWidgetClass Name="RIP_BtnPickUpAll" Slot="horizontal"
+				Text="All"
+				Font="RobotoCondensedBold" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="80 80 80 220">
+				<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+		</HorizontalLayoutWidgetClass>
+
+		<!-- Transfer buttons grid - Drop row (inventory -> vicinity) -->
+		<TextWidgetClass Slot="vertical"
+			Text="Drop"
+			Font="RobotoCondensed"
+			FontSize="11"
+			Color="160 160 160 255"
+			HAlign="left">
+			<slot name="vertical" fill-width="1" size-y="16" padding-left="4" />
+		</TextWidgetClass>
+
+		<HorizontalLayoutWidgetClass Name="RIP_DropRow" Slot="vertical">
+			<slot name="vertical" fill-width="1" size-y="32" padding-bottom="2" />
+
+			<ButtonWidgetClass Name="RIP_BtnDropWeapons" Slot="horizontal"
+				Text="Weapons"
+				Font="RobotoCondensed" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="120 60 60 180">
+				<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+
+			<ButtonWidgetClass Name="RIP_BtnDropAmmo" Slot="horizontal"
+				Text="Ammo"
+				Font="RobotoCondensed" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="120 100 40 180">
+				<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+
+			<ButtonWidgetClass Name="RIP_BtnDropMedical" Slot="horizontal"
+				Text="Medical"
+				Font="RobotoCondensed" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="40 120 60 180">
+				<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+
+			<ButtonWidgetClass Name="RIP_BtnDropEquipment" Slot="horizontal"
+				Text="Equipment"
+				Font="RobotoCondensed" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="60 80 120 180">
+				<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+
+			<ButtonWidgetClass Name="RIP_BtnDropAll" Slot="horizontal"
+				Text="All"
+				Font="RobotoCondensedBold" FontSize="11"
+				Color="255 255 255 255" BackgroundColor="80 80 80 180">
+				<slot name="horizontal" fill-width="1" padding-left="2" padding-right="2" />
+			</ButtonWidgetClass>
+		</HorizontalLayoutWidgetClass>
+
+		<!-- Category counts -->
+		<HorizontalLayoutWidgetClass Name="RIP_CategoryCounts" Slot="vertical">
+			<slot name="vertical" fill-width="1" size-y="16" padding-top="2" />
+
+			<TextWidgetClass Name="RIP_CountWeapons" Slot="horizontal"
+				Text="0" Font="RobotoCondensed" FontSize="10" Color="160 160 160 255" HAlign="center">
+				<slot name="horizontal" fill-width="1" />
+			</TextWidgetClass>
+			<TextWidgetClass Name="RIP_CountAmmo" Slot="horizontal"
+				Text="0" Font="RobotoCondensed" FontSize="10" Color="160 160 160 255" HAlign="center">
+				<slot name="horizontal" fill-width="1" />
+			</TextWidgetClass>
+			<TextWidgetClass Name="RIP_CountMedical" Slot="horizontal"
+				Text="0" Font="RobotoCondensed" FontSize="10" Color="160 160 160 255" HAlign="center">
+				<slot name="horizontal" fill-width="1" />
+			</TextWidgetClass>
+			<TextWidgetClass Name="RIP_CountEquipment" Slot="horizontal"
+				Text="0" Font="RobotoCondensed" FontSize="10" Color="160 160 160 255" HAlign="center">
+				<slot name="horizontal" fill-width="1" />
+			</TextWidgetClass>
+		</HorizontalLayoutWidgetClass>
+
+		<!-- Transfer progress bar -->
+		<FrameWidgetClass Name="RIP_TransferProgress" Slot="vertical" Visible="false">
+			<slot name="vertical" fill-width="1" size-y="6" padding-top="4" padding-left="4" padding-right="4" />
+
+			<ImageWidgetClass Slot="frame" Color="48 48 48 128">
+				<slot name="frame" anchor-left="0" anchor-top="0" anchor-right="1" anchor-bottom="1" />
+			</ImageWidgetClass>
+
+			<ImageWidgetClass Name="RIP_TransferProgressFill" Slot="frame"
+				Color="100 180 255 255">
+				<slot name="frame" anchor-left="0" anchor-top="0" anchor-bottom="1" size-x="0" />
+			</ImageWidgetClass>
+		</FrameWidgetClass>
+
+		<!-- Transfer status text -->
+		<TextWidgetClass Name="RIP_TransferStatus" Slot="vertical"
+			Text=""
+			Font="RobotoCondensed"
+			FontSize="10"
+			Color="160 160 160 255"
+			HAlign="center">
+			<slot name="vertical" fill-width="1" size-y="16" padding-top="2" />
+		</TextWidgetClass>
+	</VerticalLayoutWidgetClass>
+</FrameWidgetClass>
