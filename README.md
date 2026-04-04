@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Version](https://img.shields.io/badge/version-0.1.0--alpha-orange.svg)
-![Arma Reforger](https://img.shields.io/badge/Arma%20Reforger-1.6+-green.svg)
+![Arma Reforger](https://img.shields.io/badge/Arma%20Reforger-1.6.0.119-green.svg)
 
 **Smart inventory management for ARMA Reforger** - A comprehensive quality-of-life mod that modernizes the inventory system with search, quick transfer, visual indicators, and intelligent organization.
 
@@ -37,6 +37,19 @@
 - 🔗 **Mod Compatibility** - Works with popular mods
 - ⚡ **Performance Optimization** - Tuned for large servers
 - 🌍 **Localization** - Multiple language support
+
+
+## 📌 Compatibility Status (checked April 4, 2026)
+
+- ✅ **Current game version target:** `1.6.0.119`
+- ✅ **Inventory+ status:** Documentation-only refresh needed (no code changes required from publicly reported 1.6.0.119 fixes)
+- ⚠️ **Server reality check:** Popular modded ecosystems frequently run **WCS-style**, **HQC/Conflict variants**, and large mod packs.
+
+### Recommended Next Steps
+
+- Run a dedicated-server smoke test on a heavily modded 1.6.0.119 stack (especially WCS-style load orders).
+- Prioritize testing for UI overlap and inventory operation callbacks under high-population/queue-heavy servers.
+- Add a compact compatibility matrix in this README after first public Workshop release.
 
 ## 📥 Installation
 
@@ -163,10 +176,16 @@ See the [Issues](https://github.com/yourusername/ReforgerInventoryPlus/issues) p
 
 ### Tested With
 
-- ✅ Vanilla Arma Reforger
+- ✅ Vanilla Arma Reforger (1.6 branch)
 - ✅ ACE Anvil
 - ✅ RHS: Status Quo
 - ✅ BetterInventory (some features may overlap)
+
+### High-Population/Modded Server Targets
+
+- 🎯 WCS-style Conflict/HQC servers
+- 🎯 Spearhead-style hardcore servers
+- 🎯 Overthrow/Freedom Fighters style persistent scenarios
 
 ### Known Conflicts
 
