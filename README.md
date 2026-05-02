@@ -236,6 +236,8 @@ Public launch and Workshop artwork lives in [media](media/).
 | [Social tile](media/reforger-inventory-plus-social-tile.png) | Reddit, Discord, and social announcements |
 | [Concept sheet](media/media-kit-concept-sheet.png) | Visual identity reference |
 
+Workshop upload images are prepared in [media/workshop](media/workshop/). Use `preview-image.png` for the Workshop preview image and the `screenshot-*.png` files for initial screenshots.
+
 ## 📚 Resources
 
 ### Learning Reforger Modding

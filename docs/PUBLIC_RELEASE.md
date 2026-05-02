@@ -7,7 +7,9 @@
 - Replace placeholder GitHub URLs in `README.md` after the final repository owner/name is known.
 - Open at least one GitHub issue for 1.7 experimental validation.
 - Open at least one GitHub issue for community compatibility reports.
-- Add screenshots or a short clip before posting widely.
+- Use `media/workshop/preview-image.png` as the initial Workshop preview image.
+- Use the three `media/workshop/screenshot-*.png` images as initial Workshop screenshots.
+- Replace or supplement promotional mockups with real in-game screenshots after the mod loads in Workbench/game.
 
 ## Suggested Launch Post
 

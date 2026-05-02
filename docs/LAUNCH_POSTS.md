@@ -4,7 +4,9 @@ Use these as starting points when the repository and Workshop page are public. R
 
 Suggested artwork:
 
-- Workshop thumbnail: `media/reforger-inventory-plus-workshop-thumbnail.png`
+- Workshop preview image: `media/workshop/preview-image.png`
+- Workshop screenshots: `media/workshop/screenshot-search.png`, `media/workshop/screenshot-transfer-capacity.png`, `media/workshop/screenshot-vicinity.png`
+- General thumbnail: `media/reforger-inventory-plus-workshop-thumbnail.png`
 - README/GitHub banner: `media/reforger-inventory-plus-banner.png`
 - Social image: `media/reforger-inventory-plus-social-tile.png`
 
