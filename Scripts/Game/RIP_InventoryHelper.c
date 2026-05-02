@@ -188,7 +188,7 @@ class RIP_InventoryHelper
 				usedSlots++;
 		}
 
-		return usedSlots / totalSlots;
+		return (float)usedSlots / (float)totalSlots;
 	}
 
 	// Check if an item name or description matches a search query (case-insensitive)
