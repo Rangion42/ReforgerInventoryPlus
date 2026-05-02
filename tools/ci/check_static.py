@@ -55,6 +55,20 @@ def check_config_uses_constants() -> None:
         fail(f"RIP_Config.c must use constant-backed defaults. Missing: {', '.join(missing)}")
 
 
+def check_gproj_format() -> None:
+    gproj_path = ROOT / "addon.gproj"
+    text = gproj_path.read_text(encoding="utf-8")
+
+    if not text.lstrip().startswith("GameProject"):
+        fail("addon.gproj must use Enfusion GameProject syntax, not JSON")
+
+    if not re.search(r'\bGUID\s+"[0-9A-Fa-f]{16}"', text):
+        fail("addon.gproj must define a 16-character hexadecimal GUID")
+
+    if '"58D0FB3206B6F859"' not in text:
+        fail("addon.gproj must depend on the ArmaReforger project GUID")
+
+
 def check_rip_prefix() -> None:
     script_dir = ROOT / "Scripts/Game"
     for path in sorted(script_dir.rglob("*.c")):
@@ -81,6 +95,7 @@ def check_float_capacity_ratios() -> None:
 def main() -> None:
     check_constants()
     check_config_uses_constants()
+    check_gproj_format()
     check_rip_prefix()
     check_float_capacity_ratios()
     print("All static checks passed.")

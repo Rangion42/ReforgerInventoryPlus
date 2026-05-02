@@ -1,19 +1,23 @@
-{
-	"guid": "RIP_ReforgerInventoryPlus",
-	"name": "Reforger Inventory+",
-	"description": "Smart inventory management for ARMA Reforger - Search, quick transfer, visual indicators, and intelligent organization.",
-	"author": "Rangion42",
-	"version": "0.1.0",
-	"dependencies": [
-		{
-			"guid": "ArmaReforger",
-			"version": "1.6.0"
+GameProject {
+	ID "RIP"
+	GUID "765D07962A3B4C1E"
+	TITLE "Reforger Inventory+"
+	Dependencies {
+		"58D0FB3206B6F859"
+	}
+	Configurations {
+		GameProjectConfig PC {
 		}
-	],
-	"scripts": [
-		"Scripts/Game"
-	],
-	"ui": [
-		"UI/Layouts"
-	]
+		GameProjectConfig HEADLESS {
+		}
+		GameProjectConfig XBOX_ONE {
+		}
+		GameProjectConfig XBOX_SERIES {
+		}
+		GameProjectConfig PS4 {
+		}
+		GameProjectConfig PS5 {
+			PlatformHardware PS5
+		}
+	}
 }
