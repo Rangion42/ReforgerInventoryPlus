@@ -51,7 +51,7 @@ class RIP_StorageInfo
 
 		// Calculate ratios
 		if (m_iTotalSlots > 0)
-			m_fSlotRatio = m_iUsedSlots / m_iTotalSlots;
+			m_fSlotRatio = (float)m_iUsedSlots / (float)m_iTotalSlots;
 		else
 			m_fSlotRatio = 0;
 

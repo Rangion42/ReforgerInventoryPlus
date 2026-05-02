@@ -1,0 +1,15 @@
+.DS_Store
+*.log
+*.tmp
+*.bak
+
+# Workbench/local generated output
+profile/
+profiles/
+Generated/
+Temp/
+Cache/
+
+# Local editor state
+.idea/
+.vscode/

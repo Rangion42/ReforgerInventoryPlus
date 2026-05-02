@@ -1,0 +1,45 @@
+name: Bug report
+description: Report a Reforger Inventory+ bug
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: game-version
+    attributes:
+      label: Game version
+      placeholder: "Example: 1.6.0.119"
+    validations:
+      required: true
+  - type: textarea
+    id: mod-list
+    attributes:
+      label: Mod list and load order
+      description: Include all mods if this happened on a modded server.
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      placeholder: "1. Open inventory..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Paste relevant client/server logs or attach screenshots.
+    validations:
+      required: false

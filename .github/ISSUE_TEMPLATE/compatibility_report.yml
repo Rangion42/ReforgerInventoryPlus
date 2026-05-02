@@ -1,0 +1,35 @@
+name: Compatibility report
+description: Share results from testing Reforger Inventory+ with other mods
+title: "[Compatibility]: "
+labels: ["compatibility"]
+body:
+  - type: input
+    id: game-version
+    attributes:
+      label: Game version
+      placeholder: "Example: 1.6.0.119"
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Test environment
+      options:
+        - Single-player
+        - Hosted multiplayer
+        - Dedicated server
+    validations:
+      required: true
+  - type: textarea
+    id: mod-list
+    attributes:
+      label: Mod list and load order
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Results
+      description: What worked, what broke, and what should be retested?
+    validations:
+      required: true

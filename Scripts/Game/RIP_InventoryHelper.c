@@ -48,10 +48,35 @@ class RIP_InventoryHelper
 		{
 			UIInfo uiInfo = invItem.GetUIInfo();
 			if (uiInfo)
-				return uiInfo.GetName();
+			{
+				string name = uiInfo.GetName();
+				if (!name.IsEmpty())
+					return name;
+			}
 		}
 
-		return string.Empty;
+		return GetFallbackItemName(item);
+	}
+
+	// Get a stable fallback for modded items that do not provide UIInfo names
+	static string GetFallbackItemName(IEntity item)
+	{
+		switch (ClassifyItem(item))
+		{
+			case RIP_EItemCategory.WEAPONS:
+				return "Unknown Weapon";
+
+			case RIP_EItemCategory.AMMO:
+				return "Unknown Ammo";
+
+			case RIP_EItemCategory.MEDICAL:
+				return "Unknown Medical";
+
+			case RIP_EItemCategory.EQUIPMENT:
+				return "Unknown Equipment";
+		}
+
+		return "Unknown Item";
 	}
 
 	// Get the description of an item
@@ -188,7 +213,7 @@ class RIP_InventoryHelper
 				usedSlots++;
 		}
 
-		return usedSlots / totalSlots;
+		return (float)usedSlots / (float)totalSlots;
 	}
 
 	// Check if an item name or description matches a search query (case-insensitive)

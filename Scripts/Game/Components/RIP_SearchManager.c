@@ -98,7 +98,7 @@ class RIP_SearchManager
 	}
 
 	// Execute search across all character storages
-	// This runs client-side using FindItem() with predicates - no network overhead
+	// This runs client-side by enumerating local storage contents - no network overhead
 	void ExecuteSearch()
 	{
 		m_aResults.Clear();
