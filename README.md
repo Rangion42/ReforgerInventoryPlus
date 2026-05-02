@@ -1,5 +1,7 @@
 # Reforger Inventory+
 
+![Reforger Inventory+ banner](media/reforger-inventory-plus-banner.png)
+
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Version](https://img.shields.io/badge/version-0.1.0--alpha-orange.svg)
 ![Arma Reforger](https://img.shields.io/badge/Arma%20Reforger-1.6.0.119-green.svg)
@@ -63,7 +65,7 @@ See [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md) for source links and the curr
    - Search for “Reforger Inventory+”
    - Click Subscribe
 1. **Manual Installation**
-- Download the latest release from [Releases](https://github.com/Rangion42/ReforgerInventoryPlus/releases)
+   - Download the latest release from [Releases](https://github.com/Rangion42/ReforgerInventoryPlus/releases)
    - Extract to your Reforger mods folder
    - Enable in the game’s mod menu
 
@@ -221,6 +223,18 @@ Compatibility with specific mod packs should be treated as community-tested only
 ### Known Conflicts
 
 - None currently identified
+
+## 🖼️ Media Kit
+
+Public launch and Workshop artwork lives in [media](media/).
+
+| Asset | Intended Use |
+| --- | --- |
+| [Logo](media/reforger-inventory-plus-logo.png) | GitHub avatar, icon, square preview |
+| [Workshop thumbnail](media/reforger-inventory-plus-workshop-thumbnail.png) | Arma Reforger Workshop cover/thumbnail |
+| [Banner](media/reforger-inventory-plus-banner.png) | README, GitHub/social headers |
+| [Social tile](media/reforger-inventory-plus-social-tile.png) | Reddit, Discord, and social announcements |
+| [Concept sheet](media/media-kit-concept-sheet.png) | Visual identity reference |
 
 ## 📚 Resources
 

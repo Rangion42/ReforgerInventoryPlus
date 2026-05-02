@@ -2,6 +2,12 @@
 
 Use these as starting points when the repository and Workshop page are public. Replace `TODO_WORKSHOP_URL` once the Workshop listing exists.
 
+Suggested artwork:
+
+- Workshop thumbnail: `media/reforger-inventory-plus-workshop-thumbnail.png`
+- README/GitHub banner: `media/reforger-inventory-plus-banner.png`
+- Social image: `media/reforger-inventory-plus-social-tile.png`
+
 ## Workshop Short Summary
 
 ```text
