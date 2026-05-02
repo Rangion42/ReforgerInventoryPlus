@@ -22,6 +22,8 @@ Workshop: TODO
 
 Please include your game version, full mod list/load order, repro steps, and screenshots or logs when reporting bugs.
 
+For channel-specific drafts, see [LAUNCH_POSTS.md](LAUNCH_POSTS.md).
+
 ## Good Places to Share
 
 - Arma Reforger Workshop page

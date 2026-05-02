@@ -241,6 +241,10 @@ Compatibility with specific mod packs should be treated as community-tested only
 
 This project is licensed under the MIT License - see the <LICENSE> file for details.
 
+Reforger Inventory+ is created and maintained by **Rangion42**. If you fork, reuse, bundle, or build from this project, please preserve attribution and link back to:
+
+https://github.com/Rangion42/ReforgerInventoryPlus
+
 ## 👏 Acknowledgments
 
 - **Bohemia Interactive** - For Arma Reforger and the Enfusion engine
